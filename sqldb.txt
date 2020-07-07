@@ -1,0 +1,151 @@
+
+DROP DATABASE IF EXISTS selkirk_brick_stock ;
+
+
+CREATE DATABASE selkirk_brick_stock CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+USE selkirk_brick_stock;
+
+
+
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+	ON selkirk_brick_stock.*
+	TO 'mark'@'localhost'
+	IDENTIFIED BY '123456'; 
+
+
+
+
+
+CREATE TABLE manager(
+manager_id int NOT NULL,
+username varchar(255) NOT NULL,
+password varchar(255) NOT NULL,
+name varchar(255),
+PRIMARY KEY(manager_id));
+
+
+CREATE TABLE worker(
+worker_id int auto_increment,
+username varchar(255) NOT NULL,
+password varchar(255) NOT NULL,
+name varchar(255),
+PRIMARY KEY(worker_id ));
+
+
+CREATE TABLE brick(
+brick_id int auto_increment,
+brick_type varchar(255),
+batch int,
+row int,
+quantity int,
+url varchar(255),
+PRIMARY Key (brick_id) );
+
+
+CREATE TABLE add_brick_order(
+add_brick_order_id int auto_increment,
+manager_id int,
+worker_id int ,
+add_text text,
+add_sql text,
+datetime datetime,
+status varchar(6),
+PRIMARY Key (add_brick_order_id),
+FOREIGN Key(worker_id) REFERENCES Worker(worker_id),
+FOREIGN Key(manager_id) REFERENCES Manager(manager_id));
+
+
+
+CREATE TABLE order_brick(
+order_brick_id int auto_increment,
+worker_id int ,
+manager_id int,
+datetime datetime,
+text text,
+update_sql text,
+status varchar(6),
+PRIMARY Key (order_brick_id),
+FOREIGN Key(worker_id) REFERENCES Worker(worker_id),
+FOREIGN Key(manager_id) REFERENCES Manager(manager_id));
+
+
+CREATE TABLE feedback(
+feedback_id int auto_increment,
+worker_id int ,
+manager_id int,
+datetime datetime,
+text text,
+PRIMARY Key (feedback_id),
+FOREIGN Key (worker_id) REFERENCES Worker(worker_id),
+FOREIGN Key (manager_id) REFERENCES Manager(manager_id));
+
+
+INSERT INTO manager (manager_id, username, password, name)
+VALUES('1','30315057','password','Lancelot');
+
+
+
+
+
+
+INSERT INTO worker(worker_id, username, password, name)
+VALUES('1','Lancelot','password','Xianfeng Zeng');
+
+
+INSERT INTO feedback  ( worker_id, manager_id, datetime, text)
+ VALUES ( '1', '1', '2019-05-07 21:00:00', 'What\'s up mate'); 
+
+
+INSERT INTO brick (brick_id, brick_type, batch, row,quantity ,url ) 
+VALUES ('1', 'BLACK DIAMOND', '2123', '904','300','https://www.selkirk.com.au/wp-content/uploads/2017/03/Black-Diamond-with-off-white-Mortar-1024x1024.jpg'),
+ ('2', 'GALAXY', '2248', '905','300','https://www.selkirk.com.au/wp-content/uploads/2018/04/galaxy-Web-1019x1024.jpg'),
+ ('3', 'LATROBE', '2258', '902','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Latrobe-Swatch-1024x1024.jpg'),
+ ('4', 'LONSDALE', '2458', '505','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Lonsdale-Swatch-2017-web.jpg'),
+ ('5', 'ROSEHILL', '1458', '304','300','https://www.selkirk.com.au/wp-content/uploads/2018/04/rosehill-web-1019x1024.jpg'),
+ ('6', 'WELLBOURNE', '1988', '103','300','https://www.selkirk.com.au/wp-content/uploads/2018/04/wellbourne-web-998x1024.jpg'),
+ ('7', 'DAWNBREAK', '1258', '505','300','https://www.selkirk.com.au/wp-content/uploads/2017/12/Dawnbreak-Wall-Swatch.jpg'),
+ ('8', 'MOONSHADOW', '1498', '404','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Moonshadow-Swatch-1024x1024.jpg'),
+ ('9', 'SANDSTORM', '1638', '502','300','https://www.selkirk.com.au/wp-content/uploads/2017/12/Sandstorm-Wall-Swatch.jpg'),
+ ('10', 'THUNDERSTORM', '1645', '302','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/thunderstorm-web-1010x1024.jpg'),
+ ('11', 'JASPER', '1745', '102','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Jasper-Swatch-2017-2.jpg'),
+ ('12', 'TAWNY HERITAGE', '1455', '202','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/tawny-heritage-web-1024x1024.jpg'),
+ ('13', 'MINILYA', '1575', '201','300','https://www.selkirk.com.au/wp-content/uploads/2017/12/Minilya-web-1008x1024.jpg'),
+ ('14', 'MOSMAN RED', '2775', '301','300','https://www.selkirk.com.au/wp-content/uploads/2017/12/Mosman-Red-web-1013x1024.jpg'),
+ ('15', 'SMOOTH RED', '1785', '301','300','https://www.selkirk.com.au/wp-content/uploads/2017/12/Smooth-Red-web-1019x1024.jpg'),
+ ('16', 'VINTAGE RED', '1776', '305','300','https://www.selkirk.com.au/wp-content/uploads/2018/04/vintage-Red-tumbled-web-1008x1024.jpg'),
+ ('17', 'COASTAL STONE', '2776', '309','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Coastal-Stone-Swatch-2017-1-1.jpg'),
+ ('18', 'MACEDON', '2926', '100','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Macedon-1024x855.jpg'),
+ ('19', 'COPPERSTONE', '4226', '106','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Copperstone-Swatch-2.jpg'),
+ ('20', 'KARINYA BLEND', '3526', '103','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Karinya-Blend-Web-1024x901.jpg'),
+ ('21', 'IRONSTONE', '2453', '101','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Ironstone-Swatch-1024x1024.jpg'),
+ ('22', 'GOLDFIELD HAZE', '2883', '601','300','https://www.selkirk.com.au/wp-content/uploads/2017/03/Goldfield-Haze-SWATCH-001.jpg'),
+ ('23', 'MUSKET HAZE', '2773', '309','300','https://www.selkirk.com.au/wp-content/uploads/2017/12/Musket-Haze-web-1019x1024.jpg'),
+ ('24', 'REBELLION RED', '2893', '304','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Rebellion-Red-Web-1024x1024.jpg'),
+ ('25', 'EBONY', '3393', '204','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Ebony-colour-swatch-1.jpg'),
+ ('26', 'FOSSIL', '3783', '205','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Fossil-colour-swatch-1.jpg'),
+ ('27', 'IVORY', '3783', '206','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Ivory-colour-swatch-1.jpg'),
+ ('28', 'STEEL', '3313', '206','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Steel-Colour-swatch-1.jpg'),
+ ('29', 'BLOCK CAP CHARCOAL', '1214', '207','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Tasman-Block-Charcoal-Cap-1024x683-1.jpg'),
+ ('30', 'CORNER BLOCK CHARCOAL', '1144', '208','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Tasman-Corner-Block-Charcoal-1024x683.jpg'),
+('31', 'WALL BLOCK CHARCOAL', '2345', '307','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Tasman-Wall-Block-Charcoal-1024x683-2.jpg'),
+('32', 'BLOCK CAP OATMEAL', '3114', '302','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/tasman-cap-clock-oat-1-1.jpg'),
+('33', 'HALF BLOCK OATMEAL', '4563', '209','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Tasman-HalfBlock-oat-1.jpg'),
+('34', 'WALL BLOCK OATMEAL', '2123', '306','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Tasman-Block-Oatmeal-1.jpg'),
+('35', 'TERRACOTTA', '4567', '308','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Quadro40-50_L-Terracotta-1.jpg'),
+('36', 'SUNSTONE', '4577', '309','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Quadro40-50_L-Sunstone-1.jpg'),
+('37', 'MOCHA', '2477', '401','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Quadro40-50_L-SA-Mocha-1.jpg'),
+('38', 'OATMEAL', '2177', '402','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Quadro40-50_L-Oatmeal-1.jpg'),
+('39', 'CHARCOAL', '1777', '403','300','https://www.selkirk.com.au/wp-content/uploads/2017/05/Quadro40-50_L-Charcoal-1.jpg'),
+('40', 'Secondary-Bricks', '1566', '403','300','https://cdn.shopify.com/s/files/1/2221/9907/products/979006910_o_1024x1024.jpg?v=1516791789');
+
+
+
+
+
+INSERT INTO order_brick(worker_id,manager_id,datetime,text,update_sql,status)
+VALUES('1','1','05/23/2019 12:31:33','Remove bricks_type:*** batch:***from Row:*** to XXX','UPDATExxxxx','Undone');
+
+

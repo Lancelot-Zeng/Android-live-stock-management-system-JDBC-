@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedbackActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/feed_back_container"
+        android:layout_width="fill_parent"
+        android:layout_height="46dip"
+
+        android:layout_marginBottom="43dp"
+        android:gravity="center_vertical"
+        android:padding="0.0px"
+        app:layout_constraintBottom_toTopOf="@+id/fee_back_edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/feed_back_text_title"
+
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingLeft="96.0dip"
+            android:paddingRight="96.0dip"
+            android:singleLine="true"
+            android:text="Feedback" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/fee_back_edit"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="59dp"
+        android:background="@null"
+        android:gravity="left|top"
+        android:hint="Please tell me what happen......"
+        android:inputType="textMultiLine"
+        android:paddingLeft="4.0dip"
+        android:paddingTop="4.0dip"
+        android:paddingRight="4.0dip"
+        android:paddingBottom="4.0dip"
+        android:textSize="16.0sp"
+        app:layout_constraintBottom_toTopOf="@+id/feed_back_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+     />
+
+
+
+    <Button
+        android:id="@+id/feed_back_btn"
+
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="right|bottom"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="15.0dip"
+        android:text="Hand in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fee_back_edit" />
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

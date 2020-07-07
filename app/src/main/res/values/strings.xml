@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Selkirk Brick Stock</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">List</string>
+    <string name="menu_slideshow">Add</string>
+    <string name="menu_tools">Order</string>
+    <string name="menu_share">Feedback</string>
+    <string name="menu_send">Logout</string>
+
+
+
+//add page Strings
+    <string name="BT">Type</string>
+    <string name="BLocation">Location</string>
+    <string name="BBatch">Batch</string>
+    <string name="AddButtonText">Add</string>
+
+
+
+    <string-array name="typeList">　　
+        <item>BLACK DIAMOND</item>
+        　　
+        <item>GALAXY</item>
+        　　
+        <item>LATROBE</item>
+        　　
+        <item>LONSDALE</item>
+        　　
+        <item>ROSEHILL</item>
+        　　
+        <item>WELLBOURNE</item>
+        　　
+        <item>DAWNBREAK</item>
+        　　
+        <item>MOONSHADOW</item>
+        　　
+        <item>SANDSTORM</item>
+        　　
+        <item>THUNDERSTORM</item>
+
+        <item>JASPER</item>
+        　　
+        <item>TAWNY HERITAGE</item>
+        <item>MINILYA</item>
+
+        <item>MOSMAN RED</item>
+        <item>SMOOTH RED</item>
+        <item>VINTAGE RED</item>
+        <item>COASTAL STONE</item>　　
+        <item>MACEDON</item>
+        <item>COPPERSTONE</item>
+        <item>KARINYA BLEND</item>
+        <item>IRONSTONE</item>
+        <item>GOLDFIELD HAZE</item>
+        <item>MUSKET HAZE</item>
+        <item>REBELLION RED</item>
+        <item>EBONY</item>
+        <item>FOSSIL</item>
+        <item>IVORY</item>
+        <item>STEEL</item>
+        <item>BLOCK CAP CHARCOAL</item>
+        <item>CORNER BLOCK CHARCOAL</item>
+        <item>WALL BLOCK CHARCOAL</item>
+        <item>BLOCK CAP OATMEAL</item>
+        <item>HALF BLOCK OATMEAL</item>
+        <item>WALL BLOCK OATMEAL</item>
+        <item>TERRACOTTA</item>
+        <item>SUNSTONE</item>
+        <item>MOCHA</item>
+        <item>OATMEAL</item>
+        <item>CHARCOAL</item>
+
+    </string-array>
+
+
+
+
+
+</resources>
