@@ -16,7 +16,8 @@
 #Each Activities:
 
 
-1. Login Activity
+
+Login Activity
 
 This page required user to login as a worker. The worker’s account could only be able to create from web page. 
 ***
