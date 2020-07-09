@@ -12,10 +12,10 @@
 #*Notice:please deploy the database file("sqldb.db") before deploy the Android application.
 
 
-
+***
 #Each Activities:
 
-***
+
 1. Login Activity
 
 This page required user to login as a worker. The worker’s account could only be able to create from web page. 
@@ -23,12 +23,11 @@ This page required user to login as a worker. The worker’s account could only 
 
 
 
-***
+
 Home Activity:
 The home page of android device required worker can see different types of bricks,
 and each icon can be able to click to check that brick’s stock details. (Type, batch, row, quantity)
 
-***
 
 
 
@@ -39,7 +38,7 @@ Add Activity:
 This page required worker to make a request of add new bricks. Select the brick type, 
 type in the location and batch number, 
 and click the Add button to send an add request to administrator with a default quantity.
-***
+
 
 
 
@@ -50,7 +49,7 @@ Order Activity
 This page will receive all orders that belongs to the login worker. 
 Once the user has done what they should do, make a double check, 
 and click “yes” to confirm to change the order status.
-***
+
 
 
 
