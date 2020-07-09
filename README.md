@@ -1,15 +1,15 @@
 # Android-live-stock-system-management-system-JDBC-
 
 
-#This project is in order to make an inventory real-time monitoring application for the Selkirk Brick company. 
-#This application will be used for the warehouse forklift drivers and managers of Selkirk Brick. 
+#This project is in order to make an inventory real-time monitoring application for the Brick company. 
+#This application will be used for the warehouse forklift drivers and managers of Brick factory. 
 #This live-stock system would separate as two parts, which forklift drivers would use android device, and manager would use a webpage to manage the whole thing. 
 #The monitoring application will be able to use for the manager (Administrator) to view and change the current stock data, view the workers' attendance. 
 #And the forklift drivers (users) can only use to view the current storage, and receive the orders from manager. 
 
 
 
-#please deploy the database file("sqldb.db") before deploy the Android application
+#*Notice:please deploy the database file("sqldb.db") before deploy the Android application.
 
 
 
